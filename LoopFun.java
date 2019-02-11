@@ -60,8 +60,14 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          String[] wordArray = word.split("");
+          char[] wordArray = word.toCharArray();
+          for(int i = 0; i < wordArray.length; i++) {
+
+              wordArray[i] = (char) (wordArray[i]+ 3);
+              
+            }
           
-          return null;
+          String words = String.valueOf(wordArray);
+          return words.toLowerCase();
       }
 }
