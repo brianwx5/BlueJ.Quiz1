@@ -36,15 +36,15 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          String[] phraseArray = phrase.split(" ");
-          int length = phraseArray.length;
-          String s = "";
+           String removingComma = phrase.replaceAll(",","");
+           System.out.println(removingComma);
+           String[] newArray = removingComma.split(" ");
+           String word = "";
+           for(int i = 0; i < newArray.length; i++) {
+                word = word + newArray[i].charAt(0);
+            }
+            return word.toUpperCase();
 
-          return null;
-          
-          /*String removingSpace = phrase.replaceAll(" ","");
-          String removingLowerCase = removingSpace.replaceAll("([a-z])", "");
-          return removingLowerCase; */
       }
 
       /**
