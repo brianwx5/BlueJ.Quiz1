@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,7 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        return baseValue + valueToBeAdded;
     }
 
     /**
@@ -22,7 +22,7 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        return new StringBuffer(valueToBeReversed).reverse().toString();
     }
 
     /**
@@ -30,7 +30,15 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        int length = word.length();
+        int i;
+        if(length % 2 == 0) {
+            i =((length/2)-1);
+        }
+        else {
+          i = length / 2;   
+        }
+        return word.charAt(i);
     }
 
     /**
@@ -39,7 +47,21 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        String removedChar = charToRemove.toString();
+        String newValue = value.replaceAll(removedChar, "");
+        return newValue;
+        
+        /*int length = value.length();
+        String space = "";
+        
+        for( int i =0; i < length; i++) {
+            if (value.charAt(i) != charToRemove) {
+             return space = space + value.charAt(i);
+            }
+            return space;
+        }
+        return space; */
+        
     }
 
     /**
@@ -47,6 +69,8 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        String[] sentenceArray = sentence.split(" ");
+        int length = sentenceArray.length;
+        return sentenceArray[length -1];
     }
 }
